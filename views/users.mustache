@@ -2,15 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/main.css">
     <title></title>
   </head>
   <body>
     <h1>Index</h1>
-    {{#users}}
-    {{name}}
-    <img src={{avatar}}>
-    {{job}}
-    {{/users}}
-
+      <a href="/listing/{{id}}">
+        {{#users}}
+        {{address}}
+        {{job}}
+        {{university}}
+        {{email}}
+        {{skills}}
+        <img src={{avatar}}>
+        {{job}}
+        {{/users}}
+      </a>
   </body>
 </html>

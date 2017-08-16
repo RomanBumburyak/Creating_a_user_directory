@@ -1,0 +1,12 @@
+body{
+  background-color: red;;
+}
+
+h1 {
+  text-align: center;
+}
+
+.users {
+  flex-wrap: wrap;
+  justify-content: center;
+}
