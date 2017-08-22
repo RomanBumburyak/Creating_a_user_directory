@@ -1,12 +1,10 @@
-body{
-  background-color: red;;
-}
-
-h1 {
-  text-align: center;
-}
-
-.users {
+ .container{
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.robotContainer {
+  border: 2px solid black;
   justify-content: center;
 }
