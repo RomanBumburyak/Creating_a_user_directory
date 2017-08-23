@@ -8,3 +8,9 @@
   border: 2px solid black;
   justify-content: center;
 }
+
+.Unemplyed_profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

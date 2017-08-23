@@ -108,7 +108,7 @@ router.get('/looking', unEmployedList, function(req,res) {
   res.render("looking", {users : data});
 });
 
-
+/////////////////////////this is the end of looking:
 
 // router.get('/', function(req,res) {
 //   res.render('index', {userList : Data.allUsers});
