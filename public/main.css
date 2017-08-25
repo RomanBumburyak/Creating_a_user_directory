@@ -5,23 +5,45 @@
 }
 
 .robotContainer {
+  font-weight: bold;
+
+  width: 20%;
   border: 2px solid black;
   justify-content: center;
 }
 
 .Unemployed_profile {
+  font-weight: bold;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .Employed_profile {
+  font-weight: bold;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .profilactic {
+  font-weight: bold;
   width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
+}
+
+.updateicus {
+  color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.Update_This_Profile {
+  justify-content: flex-end;
+  color: blue;
 }

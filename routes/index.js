@@ -64,7 +64,7 @@ router.post("/update_profile", function (req,res) {
 });
 
 router.get("/update_profile",function (req,res) {
-  res.render("edit_profile")
+  res.render("edit_profile", {users: req.user});
   console.log(req.body);
 });
 
@@ -128,37 +128,6 @@ router.get('/listings', function(req,res) {
     })
 });
 ////////////////////////////////////////////////////////////// I'm making this first one for employed :
-
- // let employedList = function(req, res, next) {
- //  let MongoClient = require("mongodb").MongoClient;
- //  let assert = require("assert");
- //  let url = "mongodb://localhost:27017/Creating_a_user_directory";
- //
- //
- //  MongoClient.connect(url, function(err, db) {
- //
- //    getData(db, function() {
- //      db.close();
- //      next();
- //    });
- //  });
-
-
-//   let getData = function(db, callback) {
-//     let users = db.collection("users")
-//     users.find({}).toArray().then(function(users) {
-//       data = [];
-//       for (var i = 0; i < users.length; i++) {
-//         // users[i].job  //this would be part of the if statement
-//         if (users[i].job )
-//         {
-//           data.push(users[i]);
-//         };
-//       };
-//       callback();
-//     });
-//   };
-// };
 
 
 router.get('/employed', function(req,res) {
@@ -249,17 +218,6 @@ router.post('/editProfile', function(req,res){
 
 
 
-// router.get('/', function(req,res) {
-//   res.render('index', {userList : Data.allUsers});
-// });
-//
-// router.get('users/:id', function (req, res) {
-//     let id = req.params.id;
-//
-//     let userP = Data.allUsers.find(function(user) {
-//       return user.id ==id;
-//     });
-//     res.render('profile', userP);
-// });
+
 
 module.exports = router;
