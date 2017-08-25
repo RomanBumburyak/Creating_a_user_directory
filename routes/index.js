@@ -8,7 +8,9 @@ const bcrypt = require('bcryptjs');
 
 mongoose.connect("mongodb://localhost:27017/Creating_a_user_directory");
 
-
+router.get('/', function(req,res){
+  res.redirect("login")
+});
 
 router.get("/sign_up", function (req,res) {
   res.render("sign_up");
