@@ -9,8 +9,19 @@
   justify-content: center;
 }
 
-.Unemplyed_profile {
+.Unemployed_profile {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.Employed_profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profilactic {
+  width: 25%;
+
 }

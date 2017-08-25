@@ -1,20 +1,28 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
+    <div class="Employed_profile">
 
-  <ul>
-    <li>{{#users}}
-    {{avatar}}
-    {{address}}
-    {{job}}
-    {{university}}
-    {{email}}
-    {{/users}}</li>
 
+
+    {{#users}}
+    <div class="profilactic">
+
+  <img src={{avatar}}>
+    {{address.country}}
+      {{address.city}}
+
+      {{job}}
+      {{university}}
+      {{email}}
+      </div>
+    {{/users}}
+
+  </div>
 
   </body>
 </html>

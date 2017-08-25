@@ -1,0 +1,26 @@
+
+
+<form class="" action="update_profile" method="post">
+  <input type="text" name="avatar" placeholder="link to picture">
+  <input type="text" name="university" placeholder="University">
+  <input type="text" name="job" placeholder="job">
+  <input type="text" name="company" placeholder="company">
+
+<button type="Submit">Edit</button>
+</form>
+
+
+<body>
+
+<ul>
+  {{#users}}
+  <li>
+    {{avatar}}
+    {{address}}
+    {{job}}
+    {{university}}
+    {{email}}
+  </li>
+  {{/users}}
+
+</body>

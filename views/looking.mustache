@@ -7,14 +7,19 @@
   <body>
 
   <div class= "Unemployed_profile">
+
     {{#users}}
-    <ul>
-      <li><img src={{avatar}}>
-      {{address}}
+
+    <div class="profilactic">
+      <img src={{avatar}}>
+      
+      {{address.country}}
+      {{address.city}}
       {{job}}
       {{university}}
-      {{email}}</li>
-    </ul>
+      {{email}}
+    </div>
+
     {{/users}}
   </div>
 
