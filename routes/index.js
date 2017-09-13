@@ -6,7 +6,18 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs');
 
 
+
 mongoose.connect("mongodb://localhost:27017/Creating_a_user_directory");
+
+function login(req, res, next) {
+  console.log("MiddleWare");
+  if (req.user ) {
+  next()
+  } else {
+    res.redirect("/login")
+  }
+}
+
 
 router.get('/', function(req,res){
   res.redirect("login")
@@ -33,7 +44,6 @@ router.post("/sign_up", function(req,res){
 });
 
 
-
 router.get("/login", function (req,res) {
   res.render("login");
 });
@@ -54,7 +64,6 @@ router.post("/update_profile", function (req,res) {
     job:req.body.job,
     company:req.body.company
   }).then(function(data){
-    console.log(data);
     res.redirect("/listings");
   })
   .catch(function(err){
@@ -63,15 +72,28 @@ router.post("/update_profile", function (req,res) {
   })
 });
 
-router.get("/update_profile",function (req,res) {
+router.get("/update_profile", login, function (req,res) {
+  console.log(req.user);
   res.render("edit_profile", {users: req.user});
-  console.log(req.body);
+
 });
 
 
+/////////////////////////check out the users///
+router.get('/users', login, function(req,res) {
+    User.find({})
+    .then(function(users) {
+  res.render("users", {users : users});
+  console.log();
+    });
+});
 
-
-
+///////////////////////////////////////////
+ router.get("/logOut", function (req,res){
+   req.logout();
+   res.redirect("/login")
+ });
+/////////////////////////////////////////////
 
 
 
@@ -117,8 +139,8 @@ router.get("/update_profile",function (req,res) {
 // };
 
 //This is just a finder Boiler plate , this returns everything in your users collection:
-router.get('/listings', function(req,res) {
-  console.log(req.user);
+router.get('/listings', login, function(req,res) {
+  console.log("current user:", req.user);
   User.find({})
     .then(function(users) {
       res.render("listings", {users : users});
@@ -130,7 +152,7 @@ router.get('/listings', function(req,res) {
 ////////////////////////////////////////////////////////////// I'm making this first one for employed :
 
 
-router.get('/employed', function(req,res) {
+router.get('/employed',login, function(req,res) {
   let data=[];
   User.find({})
     .then(function(users) {
@@ -192,7 +214,7 @@ console.log('3');
 
 
 
-router.get('/looking', function(req,res) {
+router.get('/looking', login, function(req,res) {
   User.find({job: null})
     .then(function(users) {
       res.render("looking", {users : users});
@@ -205,7 +227,7 @@ router.get('/looking', function(req,res) {
 /////////////////////////this is the end of looking:
 
 ///////////////////////////////////Edit Profile:
-router.get('/editProfile', function(req,res){
+router.get('/editProfile', login, function(req,res){
   res.render("edit_profile");
 });
 
